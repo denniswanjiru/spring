@@ -9,7 +9,8 @@
         <div class="buttons">
           <a class="is-light navbar-item" routerLink="browse">Browse meetup</a>
           <a class="is-light navbar-item" routerLink="create/meetup">Create meetup</a>
-          <a class="is-light navbar-item" routerLink="account">Sign in</a>
+          <a class="is-light navbar-item" routerLink="account" *ngIf="!nav.isAuthenticated">Sign in</a>
+          <a class="is-light navbar-item" routerLink="account" *ngIf="nav.isAuthenticated">Sign out</a>
         </div>
       </div>
     </div>

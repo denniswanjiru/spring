@@ -1,10 +1,12 @@
-import { AccountComponent } from './account/account.component';
-import { CreateMeetupComponent } from './create-meetup/create-meetup.component';
-import { BrowseComponent } from './browse/browse.component';
+import { AuthGuard } from './guards/auth.guard';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { MeetupComponent } from './meetup/meetup.component';
+
+import { HomeComponent } from './components/home/home.component';
+import { BrowseComponent } from './components/browse/browse.component';
+import { MeetupComponent } from './components/meetup/meetup.component';
+import { AccountComponent } from './components/account/account.component';
+import { CreateMeetupComponent } from './components/create-meetup/create-meetup.component';
 
 const routes: Routes = [
   {
@@ -20,7 +22,8 @@ const routes: Routes = [
   {
     path: "create/meetup",
     component: CreateMeetupComponent,
-    pathMatch: 'full'
+    pathMatch: 'full',
+    canActivate: [AuthGuard]
   },
   {
     path: "meetup/:id",

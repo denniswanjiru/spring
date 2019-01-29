@@ -22,4 +22,8 @@ export class AuthService {
   public signin(data: Client):Observable<Object> {
     return this.auth('signin', data)
   }
+
+  public authenticated():boolean {
+    return !!document.cookie;
+  }
 }

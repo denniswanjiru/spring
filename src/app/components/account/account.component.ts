@@ -1,5 +1,5 @@
-import { AuthService } from './../services/auth.service';
-import { NavbarService } from '../services/navbar.service';
+import { AuthService } from '../../services/auth.service';
+import { NavbarService } from '../../services/navbar.service';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -28,7 +28,7 @@ export class AccountComponent implements OnInit {
       this.auth.signin({ ...user.value })
         .subscribe(data => {
           if(data['token']) {
-            document.cookie = `jwt_token=${data['token']}`;
+            document.cookie = `token=${data['token']}`;
             this.nav.show();
             this.router.navigate(['']);
           }

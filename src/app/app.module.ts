@@ -1,18 +1,24 @@
-import { MeetupService } from './services/meetup.service';
-import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
+// services -> modules and guards
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { NavComponent } from './nav/nav.component';
-import { MeetupCardComponent } from './meetup-card/meetup-card.component';
-import { BrowseComponent } from './browse/browse.component';
-import { MeetupComponent } from './meetup/meetup.component';
-import { CreateMeetupComponent } from './create-meetup/create-meetup.component';
-import { AccountComponent } from './account/account.component';
+import { AuthGuard } from './guards/auth.guard';
+import { AuthService } from './services/auth.service';
+import { AppRoutingModule } from './app-routing.module';
+import { NavbarService } from './services/navbar.service';
+import { MeetupService } from './services/meetup.service';
+
+// components
+import { NavComponent } from './components/nav/nav.component';
+import { HomeComponent } from './components/home/home.component';
+import { MeetupComponent } from './components/meetup/meetup.component';
+import { BrowseComponent } from './components/browse/browse.component';
+import { AccountComponent } from './components/account/account.component';
+import { MeetupCardComponent } from './components/meetup-card/meetup-card.component';
+import { CreateMeetupComponent } from './components/create-meetup/create-meetup.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +38,10 @@ import { AccountComponent } from './account/account.component';
     FormsModule,
   ],
   providers: [
-    MeetupService
+    AuthGuard,
+    AuthService,
+    MeetupService,
+    NavbarService,
   ],
   bootstrap: [AppComponent]
 })

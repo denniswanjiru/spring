@@ -1,3 +1,4 @@
+import { AuthService } from './auth.service';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,13 +6,16 @@ import { Injectable } from '@angular/core';
 })
 export class NavbarService {
   visible: boolean = true;
+  isAuthenticated: boolean = false;
 
-  constructor() {}
+  constructor(private auth: AuthService) {
+    this.isAuthenticated = this.auth.authenticated();
+  }
 
-  public hide() {
+  public hide(): void {
     this.visible = false;
   }
-  public show() {
+  public show(): void {
     this.visible = true;
   }
 }
