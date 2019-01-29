@@ -1,0 +1,164 @@
+<form #f="ngForm" (ngSubmit)="save(f)">
+  <section class="section container m-b-30">
+    <div class="columns">
+      <div class="column is-9 is-offset-1">
+        <h2 class="is-size-5 p-b-20">Event Details</h2>
+
+        <div class="field">
+          <div class="control p-b-10">
+            <label for="">
+              Meetup Title <span class="has-text-danger">*</span>
+            </label>
+            <input class="m-t-10 input is-medium" placeholder="Meetup title" ngModel name="title">
+          </div>
+        </div>
+        <div class="field">
+          <div class="control p-b-10">
+            <label for="">
+              Location <span class="has-text-danger">*</span>
+            </label>
+            <input class="m-t-10 input is-medium" ngModel name="location" placeholder="Location">
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="control p-b-10">
+            <label for="">
+              Price <span class="has-text-danger">*</span>
+            </label>
+            <input class="m-t-10 input is-medium" ngModel name="price" placeholder="Price">
+          </div>
+        </div>
+
+        <div class="columns">
+          <div class="column is-6">
+            <label for="">
+              Starts <span class="has-text-danger">*</span>
+            </label>
+            <div class="columns">
+              <div class="column is-7">
+                <div class="field">
+                  <div class="control">
+                    <input class="m-t-10 input is-medium" type="date" ngModel name="startDate" placeholder="Date">
+                  </div>
+                </div>
+              </div>
+
+              <div class="column is-5">
+                <div class="field">
+                  <div class="control">
+                    <input class="m-t-10 input is-medium" type="time" ngModel name="startTime" placeholder="Time">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-6">
+            <label for="">
+              Ends <span class="has-text-danger">*</span>
+            </label>
+            <div class="columns">
+              <div class="column is-7">
+                <div class="field">
+                  <div class="control">
+                    <input class="m-t-10 input is-medium" type="date" ngModel name="endDate" placeholder="Date">
+                  </div>
+                </div>
+              </div>
+
+              <div class="column is-5">
+                <div class="field">
+                  <div class="control">
+                    <input class="m-t-10 input is-medium" type="time" ngModel name="endTime" placeholder="Time">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="control p-b-10">
+            <label for="">
+              Meetup image <span class="has-text-danger">*</span>
+            </label>
+            <input class="m-t-10 input is-medium" ngModel name="image" placeholder="Meetup image link">
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="control">
+            <label for="">
+              Meetup Description <span class="has-text-danger">*</span>
+            </label>
+            <textarea class="textarea m-t-10" ngModel name="body" placeholder="Describe the meetup" rows="10"></textarea>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="control p-b-10">
+            <label for="">Organizer</label>
+            <input class="m-t-10 input is-medium" placeholder="Organizer" ngModel name="orginizer">
+          </div>
+        </div>
+
+        <div class="columns is-gapless m-t-20">
+          <div class="column is-7">
+            <div class="field">
+              <label for="">Meetup Type</label>
+              <div class="control m-t-10">
+                <div class="select is-medium">
+                  <select ngModel name="type">
+                    <option>Camp, Trip or Retreat</option>
+                    <option>Conference</option>
+                    <option>Karaoke</option>
+                    <option>Festive or Fair</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-6 is-offset-2">
+            <div class="field">
+              <label for="">Meetup Topic</label>
+              <div class="control m-t-10">
+                <div class="select is-medium">
+                  <select ngModel name="topic">
+                    <option>Business</option>
+                    <option>Science & Technology</option>
+                    <option>Fashion</option>
+                    <option>Leadership</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section has-background-white submit-section">
+    <div class="columns is-mobile is-multiline is-centered">
+      <div class="column is-8">
+        <h1 class="is-size-2">Nice Job! You're almost there.</h1>
+      </div>
+      <div class="column is-8">
+        <div class="field is-grouped is-centered">
+          <p class="control">
+            <button type="submit" class="button is-medium">
+              Save
+            </button>
+          </p>
+          <p class="control">
+            <button type="submit" class="button is-medium is-primary">
+              Make Your Meetup Live
+            </button>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</form>

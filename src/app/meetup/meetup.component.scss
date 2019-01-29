@@ -1,0 +1,52 @@
+.hero-image {
+  height: 65vh!important;
+  -webkit-filter: blur(10px); /* Safari 6.0 - 9.0 */
+  filter: blur(10px);
+}
+
+.overlap {
+  margin-top: -510px;
+}
+
+.card--meetup {
+  min-height: 80vh!important;
+  box-sizing: border-box!important;
+}
+
+.rsvp {
+  margin-top: -24px;
+  height: 70px;
+  border-bottom: solid 1px #ccc;
+  border-top: solid 1px #ccc;
+}
+
+.price {
+  padding-top: 150px;
+}
+
+.sidebar--item {
+  line-height: 10px;
+  font-size: 14px;
+}
+
+.desc {
+  padding: 20px 60px 0 60px;
+}
+
+.tags--social {
+  padding: 60px;
+}
+
+@media only screen and (max-width: 768px) {
+  .desc {
+    padding: 0!important;
+  }
+
+  .tags--social {
+    padding: 0!important;
+  }
+
+  .price {
+    padding: 0!important;
+  }
+}

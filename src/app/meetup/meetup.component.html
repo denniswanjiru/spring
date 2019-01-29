@@ -1,0 +1,85 @@
+<div *ngIf="meetup">
+  <section class="hero is-medium is-dark is-bold">
+    <img [src]="meetup.image" alt="" class="hero-image">
+  </section>
+
+  <section class="section container overlap">
+    <div class="card card--meetup">
+      <div class="card-image">
+        <div class="columns is-gapless">
+          <div class="column is-8">
+            <figure class="image is-2by1">
+              <img [src]="meetup.image" alt="Image">
+            </figure>
+          </div>
+          <div class="column">
+            <div class="p-20">
+              <p>{{ meetup.startDate | date: 'MMM dd' | uppercase }}</p>
+              <h1 class="is-size-5 p-t-25 p-b-15">
+                <strong>{{ meetup.title }}</strong>
+              </h1>
+              <a class="has-text-grey is-size-7" *ngIf="meetup.orginizer">By {{ meetup.orginizer }}</a>
+              <p class="price has-text-grey">{{ meetup.price }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="column rsvp">
+          <div class="columns is-mobile">
+            <div class="column is-8 p-l-25">
+              <p>Share</p>
+              <p>Fav</p>
+            </div>
+            <div class="column is-4">
+              <a class="button is-medium is-fullwidth is-primary">Register</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-content">
+        <div class="content">
+          <div class="columns">
+            <div class="column is-8">
+              <div class="desc">
+                <p class="has-text-weight-semibold p-b-10">Description</p>
+                <p>{{ meetup.body }}</p>
+              </div>
+            </div>
+            <div class="column">
+              <div sclass="p-20">
+                <div class="sidebar--item">
+                  <p class="has-text-weight-semibold p-b-10">Date And Time</p>
+                  <p>{{ meetup.startDate | date: 'E, d MMM yyy' }} - {{ meetup.endDate | date: 'E, d MMM yyy' }}</p>
+                  <p>{{ meetup.startTime }} - {{ meetup.endTime }}</p>
+                  <a>Add to Calendar</a>
+                </div>
+
+                <div class="sidebar--item p-t-30">
+                  <p class="has-text-weight-semibold p-b-10">Location</p>
+                  <p>{{ meetup.location }}</p>
+                  <a href="">View Map</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tags--social">
+            <p>Tags</p>
+            <div class="tags">
+              <div *ngFor="let tag of meetup.tags">
+                <span class="tag">{{ tag }}</span>
+              </div>
+            </div>
+
+            <p>Share With Friends</p>
+            <div class="tags">
+              <span class="tag">Facebook</span>
+              <span class="tag">Twitter</span>
+              <span class="tag">Instagram</span>
+              <span class="tag">Linkedin</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

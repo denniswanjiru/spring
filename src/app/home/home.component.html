@@ -1,0 +1,17 @@
+<section class="hero is-large is-primary is-bold">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">Nairobi, Kenya</h1>
+      <h2 class="subtitle"><em>The trending meetups</em></h2>
+    </div>
+  </div>
+</section>
+
+<section class="section container">
+  <h1 class="is-size-4 is-flex p-b-25">Upcoming Meetups</h1>
+  <div class="columns is-multiline" *ngIf="meetups">
+    <div class="column is-4" *ngFor="let meetup of meetups.meetups">
+      <app-meetup-card [meetup]="meetup"></app-meetup-card>
+    </div>
+  </div>
+</section>
