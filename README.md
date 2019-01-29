@@ -2,3 +2,8 @@
 
 # Spring
 - Eventbrite hi-fidelity clone
+
+#Technologies
+- Angular 7
+- TypeScript
+- Bulma
