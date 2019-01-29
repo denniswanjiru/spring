@@ -1,8 +1,28 @@
 .auth {
   margin: 0;
   padding: 0;
+
+  .acc {
+    padding: 60px;
+    background-color: #fff;
+
+    div {
+      line-height: 24px;
+
+    }
+  }
 }
 
 .column {
   height: 100vh;
+}
+
+.photo {
+  background-image: url('https://images.pexels.com/photos/920154/pexels-photo-920154.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+  background-position: center;
+  background-size: cover;
+}
+
+span {
+  font-size: 12px;
 }

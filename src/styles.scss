@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+
 /* You can add global styles to this file, and also import other style files */
 /*
 This .scss loop will create "margin helpers" and "padding helpers" for use in your web projects.
@@ -128,4 +130,35 @@ body, html {
   animation-timing-function: ease-in-out;
   -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
+}
+
+html, body, * {
+  color: #000;
+  font-family: "Open Sans", sans-serif!important;
+}
+
+.input {
+  border-radius: 0;
+  padding: 20px;
+  border: solid 1px #ccc;
+  box-shadow: none;
+}
+
+.input:focus {
+  outline: none!important;
+  border: solid 1px blue;
+  box-shadow: none;
+}
+
+.button {
+  height: 44px;
+
+  .primary:hover {
+    color: #fff;
+  }
+}
+
+.primary {
+  background-color: #0061ff;
+  color: #fff;
 }
