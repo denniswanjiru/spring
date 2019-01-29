@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 })
 export class AccountComponent implements OnInit {
   signin: boolean = true;
+  user: object = {};
 
   constructor(public nav: NavbarService, private auth: AuthService, private router: Router) { }
 

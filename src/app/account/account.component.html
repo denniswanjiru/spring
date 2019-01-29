@@ -21,26 +21,52 @@
       <form #f="ngForm" (ngSubmit)="save(f)" class="m-t-20">
         <div class="field" *ngIf="!signin">
           <div class="control">
-            <input class="input" type="text" placeholder="Name" ngModel name="name">
+            <input type="text" placeholder="Name" [(ngModel)]="user.name" #name="ngModel" required
+            name="name" [ngClass]="{'input': true, 'is-danger': name.invalid && (name.dirty || name.touched)}">
+
+            <span class="feedback" *ngIf="name.invalid && (name.dirty || name.touched)">
+              Name is required
+            </span>
           </div>
         </div>
 
         <div class="field">
           <div class="control">
-            <input class="input" type="email" placeholder="Email" ngModel name="email">
+            <input type="email" placeholder="Email" required
+              [(ngModel)]="user.email" #email="ngModel" name="email" email
+              [ngClass]="{'input': true, 'is-danger': email.invalid && (email.dirty || email.touched)}">
+
+            <span *ngIf="email.invalid && (email.dirty || email.touched)">
+              <div class="feedback" *ngIf="email.errors.required">Email is required</div>
+              <div class="feedback" *ngIf="email.errors.email">Email must be a valid email</div>
+            </span>
           </div>
         </div>
 
         <div class="field m-t-20">
           <div class="control">
-            <input class="input" type="password" placeholder="Password" ngModel name="password">
+            <input type="password" placeholder="Password" minlength="8"
+            [(ngModel)]="user.password" #password="ngModel" name="password" required
+            [ngClass]="{'input': true, 'is-danger': password.invalid && (password.dirty || password.touched)}">
+
+            <span *ngIf="password.invalid && (password.dirty || password.touched)">
+              <div class="feedback" *ngIf="password.errors.required">Password is required</div>
+              <div class="feedback" *ngIf="password.errors.minlength">Password must have a min length of 8</div>
+            </span>
           </div>
         </div>
 
 
         <div class="field m-t-20" *ngIf="!signin">
           <div class="control">
-            <input class="input" type="password" placeholder="Confirm Password" ngModel name="confirmPassword">
+            <input type="password" placeholder="Confirm Password" required minlength="8"
+             [(ngModel)]="user.confirmPassword" #confirmPassword="ngModel" name="confirmPassword"
+             [ngClass]="{'input': true, 'is-danger': confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)}">
+
+             <span *ngIf="confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)">
+              <div class="feedback" *ngIf="confirmPassword.errors.required">Confirm Password is required</div>
+              <div class="feedback" *ngIf="confirmPassword.errors.minlength">Confirm Password must have a min length of 8</div>
+            </span>
           </div>
         </div>
 
@@ -53,8 +79,14 @@
           Remember me
         </label>
 
-        <button type="submit" class="button is-fullwidth m-t-20 primary" *ngIf="signin">Sign in</button>
-        <button type="submit" class="button is-fullwidth m-t-20 primary" *ngIf="!signin">Sign up</button>
+        <button type="submit" class="button is-fullwidth m-t-20 primary is-link" *ngIf="signin" [disabled]="f.invalid">
+          Sign in
+        </button>
+
+        <button type="submit" class="button is-fullwidth m-t-20 primary is-link" *ngIf="!signin" [disabled]="f.invalid">
+          Sign up
+        </button>
+
         <a class="button is-fullwidth m-t-20" *ngIf="signin">Sign in with Google</a>
         <a class="button is-fullwidth m-t-20" *ngIf="!signin">Sign up with Google</a>
 
