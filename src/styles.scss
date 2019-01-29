@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
 
+$primary-color: #0061ff;
 /* You can add global styles to this file, and also import other style files */
 /*
 This .scss loop will create "margin helpers" and "padding helpers" for use in your web projects.
@@ -152,13 +153,29 @@ html, body, * {
 
 .button {
   height: 44px;
-
-  .primary:hover {
-    color: #fff;
-  }
+  border-radius: 0;
+  box-shadow: none;
+  outline: none;
 }
 
 .primary {
-  background-color: #0061ff;
+  background-color: $primary-color;
   color: #fff;
+}
+
+.button.primary:hover,
+.button.primary:focus,
+.button.primary:active,
+.button.primary:visited {
+  color: #fff;
+  background-color: darken($primary-color, 10%);
+   border: none;
+}
+
+.link {
+  color: darken($primary-color, 10%)!important;
+}
+
+.link:hover {
+  text-decoration: underline;
 }

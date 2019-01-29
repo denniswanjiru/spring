@@ -1,4 +1,4 @@
-import { SigninComponent } from './signin/signin.component';
+import { AccountComponent } from './account/account.component';
 import { CreateMeetupComponent } from './create-meetup/create-meetup.component';
 import { BrowseComponent } from './browse/browse.component';
 import { NgModule } from '@angular/core';
@@ -29,7 +29,7 @@ const routes: Routes = [
   },
   {
     path: "account",
-    component: SigninComponent,
+    component: AccountComponent,
     pathMatch: "full",
   }
 ];

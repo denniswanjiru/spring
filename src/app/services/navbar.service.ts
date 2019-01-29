@@ -11,4 +11,7 @@ export class NavbarService {
   public hide() {
     this.visible = false;
   }
+  public show() {
+    this.visible = true;
+  }
 }
