@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { MeetupService } from '../../services/meetup.service';
 import { Component, OnInit } from "@angular/core";
 
@@ -9,9 +10,14 @@ import { Component, OnInit } from "@angular/core";
 export class HomeComponent implements OnInit {
   meetups;
 
-  constructor(private meetupService: MeetupService) {}
+  constructor(private meetupService: MeetupService, private router: Router) {}
 
   ngOnInit() {
+    this.router.onSameUrlNavigation = 'reload';
+    this.router.navigateByUrl(this.router.url).then(() => {
+      this.router.onSameUrlNavigation = 'ignore';
+    });
+
     this.meetupService.getMeetups()
     .subscribe((meetups) => {
       this.meetups = meetups;

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavbarService } from '../../services/navbar.service';
+
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
@@ -7,9 +8,9 @@ import { NavbarService } from '../../services/navbar.service';
 })
 export class NavComponent implements OnInit {
 
-  constructor(public nav: NavbarService) { }
+  constructor(public nav: NavbarService) {}
 
   ngOnInit() {
+    console.log('mounted')
   }
-
 }

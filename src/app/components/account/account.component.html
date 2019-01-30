@@ -18,7 +18,7 @@
         <span>or <a (click)="toggleSignin()" class="link">sign in to your account</a></span>
       </div>
 
-      <form #f="ngForm" (ngSubmit)="save(f)" class="m-t-20">
+      <form #f="ngForm" (ngSubmit)="save()" class="m-t-20">
         <div class="field" *ngIf="!signin">
           <div class="control">
             <input type="text" placeholder="Name" [(ngModel)]="user.name" #name="ngModel" required

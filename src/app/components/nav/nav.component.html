@@ -7,23 +7,27 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a class="is-light navbar-item" routerLink="browse">Browse meetup</a>
-          <a class="is-light navbar-item" routerLink="create/meetup">Create meetup</a>
+          <a class="is-light navbar-item" routerLink="browse">Browse meetups</a>
           <a class="is-light navbar-item" routerLink="account" *ngIf="!nav.isAuthenticated">Sign in</a>
-          <a class="is-light navbar-item" routerLink="account" *ngIf="nav.isAuthenticated">Sign out</a>
+          <div class="navbar-item has-dropdown is-hoverable" *ngIf="nav.isAuthenticated">
+            <a class="navbar-link"> Dennis Wanjiru </a>
+
+            <div class="navbar-dropdown">
+              <a class="navbar-item"> Profile </a>
+              <hr class="navbar-divider" />
+              <a class="navbar-item"> My Dashboard </a>
+              <hr class="navbar-divider" />
+              <a class="navbar-item" routerLink="/create/meetup"> Create Meetup </a>
+              <hr class="navbar-divider" />
+              <a class="navbar-item"> Favorites </a>
+              <hr class="navbar-divider" />
+              <a class="navbar-item"> Sign out </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </nav>
 
-<!-- <div class="navbar-item has-dropdown is-hoverable">
-  <a class="navbar-link"> More </a>
 
-  <div class="navbar-dropdown">
-    <a class="navbar-item"> About </a> <a class="navbar-item"> Jobs </a>
-    <a class="navbar-item"> Contact </a>
-    <hr class="navbar-divider" />
-    <a class="navbar-item"> Report an issue </a>
-  </div>
-</div> -->

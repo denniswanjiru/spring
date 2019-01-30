@@ -26,4 +26,8 @@ export class AuthService {
   public authenticated():boolean {
     return !!document.cookie;
   }
+
+  public getToken(): string {
+    return document.cookie.split('=')[1];
+  }
 }

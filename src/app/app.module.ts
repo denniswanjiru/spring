@@ -1,6 +1,7 @@
+import { HttpConfigInterceptorService } from './services/http-config-interceptor.service';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 
 // services -> modules and guards
@@ -42,6 +43,11 @@ import { CreateMeetupComponent } from './components/create-meetup/create-meetup.
     AuthService,
     MeetupService,
     NavbarService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpConfigInterceptorService,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })
